@@ -1,0 +1,100 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #BBB;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+  user-select: none;
+}
+
+.square[type='X']:before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  background-color: red;
+  background: radial-gradient(at 35px 35px,#FFF,#F00,#FFF);
+}
+
+.square[type='O']:before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  background-color: black;
+  background: radial-gradient(at 35px 35px,#FFF,#222,#FFF);
+}
+
+.square:hover {
+  background-color: #EEE;
+}
+
+.square.disabled {
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+.square.win {
+  background-color: aquamarine;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.game-info > ol > li > span {
+  cursor: pointer;
+}
+
+.game-info > ol > li > span.active {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.game-info > ol > li > span.x {
+  color: red;
+}
